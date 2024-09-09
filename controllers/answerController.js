@@ -2,10 +2,10 @@ const Question = require('../models/Question');
 const Team = require('../models/Team');
 
 exports.checkAnswers = async (req, res, next) => {
-    const { teamId, answers } = req.body;
+    const { teamName, answers } = req.body;
 
     try {
-        const team = await Team.findById(teamId);
+        const team = await Team.findOne(teamName);
         if (!team) {
             return res.status(404).json({ message: 'Team not found' });
         }

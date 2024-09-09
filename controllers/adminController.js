@@ -1,4 +1,5 @@
 const Admin = require('../models/Admin');
+const Team = require('../models/Team');
 
 exports.loginAdmin = async (req, res) => {
   const { username, password } = req.body;
@@ -15,6 +16,15 @@ exports.loginAdmin = async (req, res) => {
     }
 
     res.json({ message: 'Login successful', isAdmin: true });
+  } catch (error) {
+    res.status(500).json({ message: 'Server error', error: error.message });
+  }
+};
+
+exports.viewResult = async (req, res) => {
+  try {
+    const results = await Team.find();
+    res.json({ message: 'Success', results  });
   } catch (error) {
     res.status(500).json({ message: 'Server error', error: error.message });
   }
