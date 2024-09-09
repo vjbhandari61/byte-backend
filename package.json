@@ -1,0 +1,17 @@
+{
+  "name": "my-backend-app",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "dependencies": {
+    "dotenv": "^8.6.0",
+    "express": "^4.19.2",
+    "mongoose": "^5.13.22"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
